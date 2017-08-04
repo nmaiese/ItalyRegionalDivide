@@ -50,3 +50,8 @@ text.big-text{
 .dropdown-menu>li>a {
     cursor: pointer;
 }
+
+
+div#label {
+    padding: 5px 0 0 0;
+}

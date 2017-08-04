@@ -88,8 +88,7 @@ d3.json('data/italian-regions.geo.json', function(error, mapData) {
                 Bar.metric(d.target.text).update();
                 metric = d.target.text
                 var btn = $('#metric-dropdown button').html(d.target.text + " <span class='caret'></span>")
-
-
+                $("#label").html(metric + " <i>"+year+"</i>");
                 $("#stats-table #data-table_wrapper").remove();
                 bTable = DrawTable("#stats-table", features, year, d.target.text);
             });
@@ -100,7 +99,7 @@ d3.json('data/italian-regions.geo.json', function(error, mapData) {
                 Bar.year(+d.target.text).update();
                 year = +d.target.text
                 var btn = $('#year-dropdown button').html(d.target.text + " <span class='caret'></span>")
-
+                $("#label").html(metric + " <i>"+year+"</i>");
                 $("#stats-table #data-table_wrapper").remove();
                 bTable = DrawTable("#stats-table", features, +d.target.text, metric)
             });
@@ -112,6 +111,7 @@ d3.json('data/italian-regions.geo.json', function(error, mapData) {
                     console.log(year)
                     Italy.year(year).update()
                     Bar.year(year).update();
+                    $("#label").html(metric + " <i>"+year+"</i>");
                     $("#stats-table #data-table_wrapper").remove();
                     bTable = DrawTable("#stats-table", features, year, metric)
                     var btn = $('#year-dropdown button').html(year + " <span class='caret'></span>")

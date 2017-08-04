@@ -79,6 +79,7 @@ function BarChart(selector){
 
 
         var mouseover = function(d){
+
         }
 
         var mouseout = function(d){
@@ -90,6 +91,8 @@ function BarChart(selector){
           y.domain([0, d3.max(data, function(d) { return d[year][metric]; })]);
 
           svg.select(".y.axis")
+            .transition()
+            .duration(1000)
             .call(yAxis)
 
           svg.selectAll("rect")
