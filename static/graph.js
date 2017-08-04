@@ -77,12 +77,15 @@ d3.json('data/italian-regions.geo.json', function(error, mapData) {
 
         Italy = ItalyMap('#map').features(features).year(year).metric(metric);
         Italy();
+        Bar = BarChart('#barchart').data(features).year(year).metric(metric)
+        Bar();
 
         bTable = DrawTable("#stats-table", features, year, metric)
 
         $(function() {
             $('#metric-dropdown li').on('click', function(d) {
                 Italy.metric(d.target.text).update();
+                Bar.metric(d.target.text).update();
                 metric = d.target.text
                 var btn = $('#metric-dropdown button').html(d.target.text + " <span class='caret'></span>")
 
@@ -94,6 +97,7 @@ d3.json('data/italian-regions.geo.json', function(error, mapData) {
 
             $('#year-dropdown li').on('click', function(d) {
                 Italy.year(+d.target.text).update();
+                Bar.year(+d.target.text).update();
                 year = +d.target.text
                 var btn = $('#year-dropdown button').html(d.target.text + " <span class='caret'></span>")
 
@@ -107,6 +111,7 @@ d3.json('data/italian-regions.geo.json', function(error, mapData) {
                     if (year == 2015) { clearInterval(playInterval) }
                     console.log(year)
                     Italy.year(year).update()
+                    Bar.year(year).update();
                     $("#stats-table #data-table_wrapper").remove();
                     bTable = DrawTable("#stats-table", features, year, metric)
                     var btn = $('#year-dropdown button').html(year + " <span class='caret'></span>")

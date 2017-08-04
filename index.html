@@ -80,7 +80,9 @@
         <div class="panel-body" id="map">
         </div>
         <div class="panel-footer">
-        <button class="btn btn-success" type="button" id="play"> Play
+          <button class="btn btn-success" type="button" id="play"> Play
+        </div>
+        <div class="panel-body" id="barchart">
         </div>
       </div>
     </div>
@@ -88,38 +90,22 @@
       <div id="stats-table"></div>
     </div>
 
-<!--        <div id="stats-container" style="display:none;">
-
-
-
-           <h4 id="region-label"></h4>
-          <p id="primary-label"><b>Reddito Primario: </b><span></span></p>
-          <p id="available-label"><b>Reddito disponibile: </b><span></span></p>
-          <p id="secondary-label"><b>Distribuzione secondaria: </b><span></span></p>
-          <p id="pil-label"><b>PIL: </b><span></span></p>
-          <p id="pil-people-label"><b>PIL per abitante: </b><span></span></p>
-        </div>-->
-
   </div>
   <div class="row">
 
   </div>
 
 </div>
-<!-- jQuery library -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.15/datatables.min.js"></script>
-<script src="static/graph.js"></script>
 <script src="static/italymap.js"></script>
+<script src="static/barchart.js"></script>
+<script src="static/graph.js"></script>
 
 <script type="text/javascript">
-
-
-
-
 function titleCase(str) {
      str = str.replace(/-/g, ' ')
      if(str=="valle d aosta"){
@@ -135,7 +121,6 @@ function titleCase(str) {
        return str.join(' ');
      }
 }
-
 </script>
 </body>
 </html>
