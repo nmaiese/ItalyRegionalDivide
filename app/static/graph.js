@@ -1,7 +1,7 @@
 // Load map data
-d3.json('data/italian-regions.geo.json', function(error, mapData) {
+d3.json('static/data/italian-regions.geo.json', function(error, mapData) {
     var ssv = d3.dsv(";", "text/plain");
-    ssv('data/istat-reddito-regioni.csv', function(errorb, data) {
+    ssv('static/data/istat-reddito-regioni.csv', function(errorb, data) {
 
 
         data.forEach(function(d) {
