@@ -72,8 +72,8 @@ function BarChart(selector){
             .attr("id", function(d){ return d.region })
             .attr("x", function(d) { return x(d.region); })
             .attr("width", x.rangeBand())
-            .attr("y", function(d) { return y(d[year][metric]); })
-            .attr("height", function(d) { return height - y(d[year][metric]); });
+            .attr("y", function(d) { return ((y(d[year][metric])>0) ? y(d[year][metric]) : 0); })
+            .attr("height", function(d) { return ((height - y(d[year][metric])>0) ? console.log(height - y(d[year][metric])) : 0) ; });
 
 
 
@@ -100,8 +100,9 @@ function BarChart(selector){
             .duration(1000)
             .attr("x", function(d) { return x(d.region); })
             .attr("width", x.rangeBand())
-            .attr("y", function(d) { return y(d[year][metric]); })
-            .attr("height", function(d) { return height - y(d[year][metric]); });
+            .attr("y", function(d) { return ((y(d[year][metric])>0) ? y(d[year][metric]) : 0); })
+            .attr("height", function(d) { return ((height - y(d[year][metric])>0) ? height - y(d[year][metric]) : 0) ; });
+
           return chart;
         }
 
