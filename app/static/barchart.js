@@ -73,7 +73,7 @@ function BarChart(selector){
             .attr("x", function(d) { return x(d.region); })
             .attr("width", x.rangeBand())
             .attr("y", function(d) { return ((y(d[year][metric])>0) ? y(d[year][metric]) : 0); })
-            .attr("height", function(d) { return ((height - y(d[year][metric])>0) ? console.log(height - y(d[year][metric])) : 0) ; });
+            .attr("height", function(d) { return ((height - y(d[year][metric])>0) ? height - y(d[year][metric]) : 0) ; });
 
 
 
